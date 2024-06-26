@@ -83,9 +83,15 @@ app.get("/info", (request, response) => {
                 <p>${new Date().toUTCString()}</p>`;
   response.send(res);
 });
+const unknownEndpoint = (request, response) => {
+  response.status(404).send({ error: "unknown endpoint" });
+};
 
-const PORT = 3001;
+app.use(unknownEndpoint);
+const PORT = process.env.PORT || 3001;
 
 app.listen(PORT, "127.0.0.1", () => {
   console.log(`Started Server in ${PORT} port`);
 });
+
+module.exports = app;
