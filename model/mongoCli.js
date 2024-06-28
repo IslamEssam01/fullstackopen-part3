@@ -11,7 +11,7 @@ mongoose.set("strictQuery", false);
 
 mongoose
     .connect(url)
-    .then((result) => {
+    .then(() => {
         console.log("Connected to MongoDB");
     })
     .catch((error) => {
@@ -24,7 +24,6 @@ const personSchema = new mongoose.Schema({
 });
 
 const Person = mongoose.model("Person", personSchema);
-
 
 if (process.argv.length === 4) {
     const person = new Person({

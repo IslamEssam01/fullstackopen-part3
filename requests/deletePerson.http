@@ -1,1 +1,1 @@
-DELETE https://fullstackopen-phonebook.vercel.app/api/persons/788
+DELETE http://localhost:3001/api/persons/667f22b24c90d5c8c7f88a9f  HTTP/1.1
